@@ -1,0 +1,35 @@
+{
+  "name": "spring-boot-sample",
+  "version": "0.0.1",
+  "authors": [
+    "muumin"
+  ],
+  "description": "test",
+  "main": "index.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1",
+    "datatables": "~1.9.4",
+    "bootstrap": "~3.2.0"
+  },
+  "resolutions": {
+    "jquery": "1.9.1"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "": "**/*.js"
+    },
+    "datatables": {
+      "js": "media/js/jquery.dataTables.js",
+      "css": "media/css/jquery.dataTables.css",
+      "images": "media/images"
+    }
+  }
+}

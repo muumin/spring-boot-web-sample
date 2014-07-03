@@ -1,0 +1,12 @@
+/.idea
+/.gradle
+/*.iml
+.sass-cache
+build
+test.groovy
+/static/assets/js
+/static/assets/css
+/static/vendors
+/bower_components
+/node_modules
+/classes
