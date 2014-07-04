@@ -76,6 +76,8 @@ http://localhost:8080/rest
 
 [IntelliJ IDEA](http://www.jetbrains.com/idea/)なら「File」 > 「Open」でbuild.gradleを指定して取り込めばOK(なはず)です。
 
+デフォルトではJava6構文になっているのでFile > Project Structure... > Project > Project language level で6.0から7.0に変更してください。
+
 IntelliJにGruntのviewがあるので「default」をダブルクリックするとwatch taskが起動してcoffeeとsassの監視をします。
 
 画面テンプレートがThymeleafなのでLiveEditでsrc/resources/templatesのHTMLをデバック起動すると幸せになれます。
