@@ -18,22 +18,22 @@ class HelloControllerGebSpec extends SpringBootGebSpecification {
         nameForm.field.value(inputWord)
 
         then:
-        nameForm.field.value() == expectWord
+        nameForm.field.value() == inputWord
         report("名前入力") // 途中エビデンス保存
 
         when:
         nameForm.button.click()
 
         then:
-        hello.text() == "Hello, $expectWord!"
+        hello.text() == expectWord
 
         and:
         nameForm.field.value() == ""
 
         where:
         inputWord | expectWord
-        'groovy'  | 'groovy'
-        'google'  | 'google'
-        '山田'      | '山田'
+        'groovy'  | 'Hello, groovy!'
+        'google'  | 'Hello, google!'
+        '山田'      | 'Hello, 山田!'
     }
 }

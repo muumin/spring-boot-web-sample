@@ -11,6 +11,7 @@ class RestSampleControllerSpec extends SpringBootSpecification {
             new User(name: "hanako", age: 21)
     ]
 
+    // モックでテストするならSpring-Boot起動不要なので別クラスに分けた方が良い
     def "モックテスト"() {
         setup:
         def controller = new RestSampleController()
@@ -48,7 +49,7 @@ class RestSampleControllerSpec extends SpringBootSpecification {
         }
     }
 
-    def "groovy-wsliteを使用したJsonの取得結果テスト"() {
+    def "HTTPアクセステスト"() {
         when:
         def response = new RESTClient("http://localhost:8080/rest").get()
 
@@ -66,6 +67,7 @@ class RestSampleControllerSpec extends SpringBootSpecification {
         and: '結果を文字列で比較'
         // 結果のJsonを整形して出力
         // println groovy.json.JsonOutput.prettyPrint(response.text)
+        // ただし結果に時間など可変な値が入るとこれだと厳しいと思う
         response.text == '[{"name":"tarou","age":18},{"name":"hanako","age":21}]'
     }
 }

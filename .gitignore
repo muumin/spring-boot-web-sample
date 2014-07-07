@@ -1,6 +1,8 @@
 /.idea
 /.gradle
 /*.iml
+/*.ipr
+/*.iws
 .sass-cache
 build
 test.groovy

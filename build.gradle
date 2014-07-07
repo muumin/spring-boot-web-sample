@@ -1,3 +1,4 @@
+apply plugin: "idea"
 apply plugin: "eclipse"
 apply plugin: "groovy"
 apply plugin: 'spring-boot'
@@ -49,10 +50,31 @@ dependencies {
     drivers.each { driver ->
         testCompile "org.seleniumhq.selenium:selenium-$driver-driver:$seleniumVersion"
     }
+
+    testCompile('org.mockito:mockito-all:1.9.5')
+    testCompile('net.arnx:jsonic:1.3.5')
 }
 
 task wrapper(type: Wrapper) { gradleVersion = '1.12' }
 
 eclipse {
     pathVariables GRADLE_REPO: file(System.properties['user.home'] + '/.gradle/cache')
+}
+
+idea.project.ipr {
+    withXml {xml ->
+        def root = xml.node
+
+        def component = root.appendNode('component', [name : 'GradleSettings'])
+        def option = component.appendNode('option', [name : 'linkedExternalProjectsSettings'])
+        def setting = option.appendNode('GradleProjectSettings')
+        ['distributionType' : 'DEFAULT_WRAPPED',
+                'externalProjectPath' : '$PROJECT_DIR$',
+                'gradleHome' : '$USER_HOME$/.gvm/gradle/1.12'].each {name, value ->
+            setting.appendNode('option', [name : name, value : value])
+        }
+        setting.appendNode('option', [name : 'modules'])
+            .appendNode('set')
+            .appendNode('option', [value : '$PROJECT_DIR$'])
+    }
 }

@@ -14,18 +14,23 @@ SpringBootをGradle + Spockでどこまで出来るかお試し。
 
 ※ CoffeeScriptについてはコンパイル環境構築だけで未使用
 
-#開発/テスト
-
+#開発
 * Gradle
+
+#テスト(Groovy)
 * Groovy
 * Spock
 * groovy-wslite
 * Geb
 
+#テスト(JUnit)
+* Mockito
+* JSONIC
+* Selenium
+
 ----
 
 #起動に必要な物
-
 
 [Node.js](http://nodejs.org/download/)
 
@@ -70,14 +75,25 @@ http://localhost:8080/rest
 
 * build/reports
 * build/reports/geb (Gebの画面スナップショット)
+* build/reports/selenium (Seleniumの画面スナップショット)
 
+##開発
 
-#開発
-
+##build.gradleからインポート
 [IntelliJ IDEA](http://www.jetbrains.com/idea/)なら「File」 > 「Open」でbuild.gradleを指定して取り込めばOK(なはず)です。
 
 デフォルトではJava6構文になっているのでFile > Project Structure... > Project > Project language level で6.0から7.0に変更してください。
 
+##ideaプラグイン
+コマンドでIntelliJの設定ファイルを作成
+
+    gradlew idea
+
+作成後IntelliJで開けば良いです。
+
+こちらの方法だと開いた後にVCSの設定が必要になります
+
+##その他
 IntelliJにGruntのviewがあるので「default」をダブルクリックするとwatch taskが起動してcoffeeとsassの監視をします。
 
 画面テンプレートがThymeleafなのでLiveEditでsrc/resources/templatesのHTMLをデバック起動すると幸せになれます。
@@ -104,3 +120,7 @@ https://github.com/geb/geb-example-gradle
 https://github.com/yamkazu/spock-workshop
 
 http://d.hatena.ne.jp/hiroe_orz17/20130418/1366246108
+
+#感謝
+
+@mike_neckさんにgradle ideaの設定を教えて貰ったので感謝！
