@@ -3,40 +3,40 @@ Spring Boot Sample
 
 SpringBootをGradle + Spockでどこまで出来るかお試し。
 
-あと毎年納税してあんまり使ってなかったIntelliJをガンガン使ってみたかった。
+あと毎年納税してあんまり使ってなかったIntelliJをWEB開発でガンガン使ってみたかった。
 
 #本体
 
-* SpringBoot
-* Thymeleaf
-* CoffeeScript
-* Sass
+* [SpringBoot](https://github.com/spring-projects/spring-boot)
+* [Thymeleaf](http://www.thymeleaf.org/)
+* [CoffeeScript](http://coffeescript.org/)
+* [Sass](http://sass-lang.com/)
 
 ※ CoffeeScriptについてはコンパイル環境構築だけで未使用
 
 #開発
-* Gradle
+* [IntelliJ IDEA](http://www.jetbrains.com/idea/)
+* [Gradle](http://www.gradle.org/)
 
 #テスト(Groovy)
-* Groovy
-* Spock
-* groovy-wslite
-* Geb
+* [Groovy](http://groovy.codehaus.org/)
+* [Spock](https://code.google.com/p/spock/)
+* [groovy-wslite](https://github.com/jwagenleitner/groovy-wslite)
+* [Geb](http://www.gebish.org/)
 
 #テスト(JUnit)
-* Mockito
-* JSONIC
-* Selenium
+Groovyとの比較のため同じテストをJUnitでも書いています。
 
+* [Mockito](https://code.google.com/p/mockito/)
+* [JSONIC](http://jsonic.sourceforge.jp/)
+* [Selenium](http://docs.seleniumhq.org/)
 ----
 
 #起動に必要な物
 
-[Node.js](http://nodejs.org/download/)
-
-[Ruby](http://rubyinstaller.org/)
-
-[FireFox](http://www.mozilla.org/ja/firefox/new/)
+* [Node.js](http://nodejs.org/download/)
+* [Ruby](http://rubyinstaller.org/)
+* [FireFox](http://www.mozilla.org/ja/firefox/new/)
 
 ##Grunt
 
@@ -59,11 +59,10 @@ SpringBootをGradle + Spockでどこまで出来るかお試し。
     grunt init
 	gradlew bootRun
 
-起動後以下にアクセスする
+起動後以下にアクセスすることで画面とRESTを確認出来ます。
 
-http://localhost:8080
-
-http://localhost:8080/rest
+* [http://localhost:8080](http://localhost:8080)
+* [http://localhost:8080/rest](http://localhost:8080/rest)
 
 ##テスト起動
 
@@ -73,14 +72,14 @@ http://localhost:8080/rest
 
 テスト結果は以下に保存されます。
 
-* build/reports
+* build/reports/tests(テスト結果のレポート)
 * build/reports/geb (Gebの画面スナップショット)
 * build/reports/selenium (Seleniumの画面スナップショット)
 
 ##開発
 
 ##build.gradleからインポート
-[IntelliJ IDEA](http://www.jetbrains.com/idea/)なら「File」 > 「Open」でbuild.gradleを指定して取り込めばOK(なはず)です。
+IntelliJなら「File」 > 「Open」でbuild.gradleを指定して取り込めばOK(なはず)です。
 
 デフォルトではJava6構文になっているのでFile > Project Structure... > Project > Project language level で6.0から7.0に変更してください。
 
@@ -98,7 +97,7 @@ IntelliJにGruntのviewがあるので「default」をダブルクリックす�
 
 画面テンプレートがThymeleafなのでLiveEditでsrc/resources/templatesのHTMLをデバック起動すると幸せになれます。
 
-http://blog.jetbrains.com/jp/2013/09/12/170
+[JetBrains ブログ](http://blog.jetbrains.com/jp/2013/09/12/170)
 
 (PhpStormの例ですがIntelliJでも同じです)
 
@@ -108,8 +107,6 @@ http://blog.jetbrains.com/jp/2013/09/12/170
     * HotDeploy出来ないけどSpringLoaderあたり使えばいけるのかな？(未確認)
 
 #参考サイト
-
-https://github.com/spring-projects/spring-boot
 
 http://www.slideshare.net/makingx/spring-4spring-boot-spring-jjug-jsug
 
