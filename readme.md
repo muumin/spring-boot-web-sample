@@ -107,6 +107,36 @@ IntelliJにGruntのviewがあるので「default」をダブルクリックす�
 * デバックはApplication.javaをデバック起動すればいけるっぽい
     * HotDeploy出来ないけどSpringLoaderあたり使えばいけるのかな？(未確認)
 
+#メモ
+
+##npm package install
+
+    npm install grunt-bower-task --save-dev
+
+##Bower package install
+
+    bower install jquery --save
+
+##npm update
+
+[npm-check-updates](https://github.com/tjunnone/npm-check-updates)
+    
+インストール
+    
+    npm install -g npm-check-updates
+
+チェック
+
+    npm-check-updates
+    
+package.jsonのバージョンを一括アップデート
+
+    npm-check-updates -u
+    
+アップデートをインストール
+
+    npm install
+
 #参考サイト
 
 http://www.slideshare.net/makingx/spring-4spring-boot-spring-jjug-jsug
