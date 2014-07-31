@@ -6,9 +6,9 @@
 .sass-cache
 build
 test.groovy
-/static/assets/js
-/static/assets/css
-/static/vendors
+/src/main/resources/static/assets/js
+/src/main/resources/static/assets/css
+/src/main/resources/static/vendors
 /bower_components
 /node_modules
 /classes

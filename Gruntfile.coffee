@@ -4,7 +4,7 @@ module.exports = (grunt)->
     bower:
       install:
         options:
-          targetDir: 'static/vendors'
+          targetDir: 'src/main/resources/static/vendors'
           layout: 'byComponent'
           install: true
           verbose: false
@@ -24,7 +24,7 @@ module.exports = (grunt)->
           expand: true
           cwd: 'src/main/coffee'
           src: ['**/*.coffee']
-          dest: 'static/assets/js'
+          dest: 'src/main/resources/static/assets/js'
           ext: '.js'
         ]
         options:
@@ -36,26 +36,26 @@ module.exports = (grunt)->
           expand: true
           cwd: 'src/main/sass'
           src: ['**/*.sass']
-          dest: 'static/assets/css'
+          dest: 'src/main/resources/static/assets/css'
           ext: '.css'
         ]
     clean:
-      coffee:["static/assets/js"]
-      sass:["static/assets/css"]
+      coffee:["src/main/resources/static/assets/js"]
+      sass:["src/main/resources/static/assets/css"]
     cssmin:
       vendors_target:
         files:
-          'static/vendors/bootstrap/bootstrap.min.css':['static/vendors/bootstrap/bootstrap.css']
+          'src/main/resources/static/vendors/bootstrap/bootstrap.min.css':['src/main/resources/static/vendors/bootstrap/bootstrap.css']
     uglify:
       options:
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       vendors_target:
         files:
-          'static/vendors/bootstrap/bootstrap.min.js':['static/vendors/bootstrap/bootstrap.js']
-          'static/vendors/datatables/js/jquery.dataTables.min.js':['static/vendors/datatables/js/jquery.dataTables.js']
+          'src/main/resources/static/vendors/bootstrap/bootstrap.min.js':['src/main/resources/static/vendors/bootstrap/bootstrap.js']
+          'src/main/resources/static/vendors/datatables/js/jquery.dataTables.min.js':['src/main/resources/static/vendors/datatables/js/jquery.dataTables.js']
       my_target:
         files:
-          'static/assets/js/sample.min.js':['static/assets/js/sample.js']
+          'src/main/resources/static/assets/js/sample.min.js':['src/main/resources/static/assets/js/sample.js']
 
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-bower-task'

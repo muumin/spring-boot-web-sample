@@ -22,6 +22,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -50,8 +51,9 @@ public class HelloControllerTest {
     private int num = 0;
 
     @Before
-    public void before() {
+    public void before() throws IOException{
         driver = new FirefoxDriver();
+        Files.createDirectories(captureDirectory);
     }
 
     @After
