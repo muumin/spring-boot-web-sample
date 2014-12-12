@@ -15,12 +15,14 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.9.1",
-    "datatables": "~1.9.4",
-    "bootstrap": "~3.2.0"
+    "jquery": "1.11.1",
+    "jquery-ui": "1.11.2",
+    "datatables": "~1.10.4",
+    "sugar": "~1.4.1",
+    "bootstrap": "~3.3.1"
   },
   "resolutions": {
-    "jquery": "1.9.1"
+    "jquery": "1.11.1"
   },
   "exportsOverride": {
     "jquery": {
@@ -30,6 +32,17 @@
       "js": "media/js/jquery.dataTables.js",
       "css": "media/css/jquery.dataTables.css",
       "images": "media/images"
+    },
+    "jquery-ui": {
+      "js": "*.js",
+      "js/i18n": "ui/i18n/datepicker-ja.js",
+      "css": "themes/redmond/*.css",
+      "css/images": "themes/redmond/images"
+    },
+    "bootstrap": {
+      "js": "dist/js/*.*",
+      "css": "dist/css/*.*",
+      "fonts": "fonts/*.*"
     }
   }
 }

@@ -42,16 +42,15 @@ module.exports = (grunt)->
     clean:
       coffee:["src/main/resources/static/assets/js"]
       sass:["src/main/resources/static/assets/css"]
-    cssmin:
-      vendors_target:
-        files:
-          'src/main/resources/static/vendors/bootstrap/bootstrap.min.css':['src/main/resources/static/vendors/bootstrap/bootstrap.css']
+#    cssmin:
+#      vendors_target:
+#        files:
+#          'src/main/resources/static/vendors/bootstrap/bootstrap.min.css':['src/main/resources/static/vendors/bootstrap/bootstrap.css']
     uglify:
       options:
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       vendors_target:
         files:
-          'src/main/resources/static/vendors/bootstrap/bootstrap.min.js':['src/main/resources/static/vendors/bootstrap/bootstrap.js']
           'src/main/resources/static/vendors/datatables/js/jquery.dataTables.min.js':['src/main/resources/static/vendors/datatables/js/jquery.dataTables.js']
       my_target:
         files:
@@ -65,5 +64,6 @@ module.exports = (grunt)->
   grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.registerTask 'default', ['watch']
-  grunt.registerTask 'init', ['bower:install', 'clean', 'coffee', 'sass', 'uglify', 'cssmin']
+#  grunt.registerTask 'init', ['bower:install', 'clean', 'coffee', 'sass', 'uglify', 'cssmin']
+  grunt.registerTask 'init', ['bower:install', 'clean', 'coffee', 'sass', 'uglify']
   return
